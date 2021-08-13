@@ -1,0 +1,50 @@
+.sidebar {
+    position: absolute;
+    z-index: 9999;
+    margin: 1.5em;
+    width: 20vw;
+    height: 40vh;
+    border-radius: 5px;
+    padding: 1.5em;
+    background: rgb(45, 45, 45);
+    border: 1px solid rgb(65, 65, 65);
+    box-shadow: 3px 4px 20px 10px rgba(25, 25, 25, 0.3);
+}
+
+.opener {
+    position: absolute;
+    margin: 1em;
+    z-index: 9999;
+    padding: 0.5em;
+    background: rgb(45, 45, 45);
+    border: 1px solid rgb(65, 65, 65);
+    box-shadow: 3px 4px 20px 10px rgba(25, 25, 25, 0.3);
+    width: 25px;
+    height: 25px;
+    box-sizing: content-box;
+}
+
+.titleSection {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title {
+    font-size: 1.75em;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+}
+
+.title span {
+    margin-left: 0.25em;
+}
+
+.layers {
+    margin-top: 1em;
+}
+
+.layer:not(:last-child) {
+    margin-bottom: 0.25em;
+}

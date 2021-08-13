@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Inter;
+  background: #383434;
+  color: #ffffff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.leaflet-container {
+  background: #383434 !important;
+}
