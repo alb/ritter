@@ -21,7 +21,6 @@ export default function Sidebar() {
       } else {
         newLayer.properties.hidden = false;
       }
-        console.log(newLayer)
 
       dispatch(setIndex({
         index: index,

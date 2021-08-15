@@ -6,7 +6,6 @@ import 'leaflet/dist/leaflet.css';
 
 export default function Map() {
     const geoJson = useSelector(state => {
-        console.log(state.geoReducer.geoJson)
         return state.geoReducer.geoJson
     });
 
