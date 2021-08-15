@@ -7,3 +7,8 @@
     align-items: center;
     justify-content: center;
 }
+
+.loader img {
+    width: 20vw;
+    height: auto;
+}
