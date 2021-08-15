@@ -11,7 +11,7 @@
 
 ### Features 
  - Easy to use and extend
- - Custom and self-made dark map theme
+ - Custom dark map theme
  - Layer-based viewing with the ability to toggle layers
  - Able to render all geometry types specified in the [GeoJSON Specification](https://geojson.org/) 
  - All geometry types are stylable with custom colors (Full support for [Leaflet's Path class](https://leafletjs.com/reference-1.7.1.html#path) is in the works)
