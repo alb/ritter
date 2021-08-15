@@ -9,12 +9,15 @@ export const geoSlice = createSlice({
         setGeoJson: (state, action) => {
             state.geoJson = action.payload;
         },
+        setIndex: (state, action) => {
+            state.geoJson[action.payload.index] = action.payload.value
+        },
         clearGeoJson: (state) => {
             state.geoJson = [];
         },
     },
 });
 
-export const { setGeoJson, clearGeoJson } = geoSlice.actions;
+export const { setGeoJson, setIndex, clearGeoJson } = geoSlice.actions;
 
 export default geoSlice.reducer;

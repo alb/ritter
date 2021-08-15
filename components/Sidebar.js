@@ -1,15 +1,33 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { setIndex } from '../store/features/geoSlice';
+import { useSelector, useDispatch } from "react-redux";
 import styles from '../styles/Sidebar.module.css';
 
 export default function Sidebar() {
     const geoJson = useSelector(state => state.geoReducer.geoJson);
+    const dispatch = useDispatch();
+
     const [isActive, toggleActive] = useState(true);
 
     const toggleSidebar = () => {
       toggleActive(!isActive);
     };
+
+    function toggleLayer(index) {
+      let newLayer = JSON.parse(JSON.stringify(geoJson[index]));
+      if(!newLayer.properties.hidden) {
+        newLayer.properties.hidden = true;
+      } else {
+        newLayer.properties.hidden = false;
+      }
+        console.log(newLayer)
+
+      dispatch(setIndex({
+        index: index,
+        value: newLayer
+      }));
+    }
 
     const sidebarVariants = {
         enter: {
@@ -72,11 +90,14 @@ export default function Sidebar() {
                 <div className={styles.layers}>
                   {geoJson.map((layer, index) => (
                     <div className={styles.layer} key={index}>
-                      <div class={styles.layerName}>
+                      <div className={styles.layerName}>
                         <span>{layer.properties.name}</span>
                       </div>
-                      <div class={styles.layerToggle}>
-                        <img src="/eye.svg"/>
+                      <div className={styles.layerToggle} onClick={() => toggleLayer(index)}>
+                        {!layer?.properties.hidden
+                          ? <img src="/eye.svg"/>
+                          : <img src="/eye-off.svg"/>
+                        }
                       </div>
                     </div>
                   ))}

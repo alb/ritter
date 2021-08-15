@@ -5,7 +5,10 @@ import styles from '../../styles/Leaflet.module.css';
 import 'leaflet/dist/leaflet.css';
 
 export default function Map() {
-    const geoJson = useSelector(state => state.geoReducer.geoJson);
+    const geoJson = useSelector(state => {
+        console.log(state.geoReducer.geoJson)
+        return state.geoReducer.geoJson
+    });
 
     return (
         <div>

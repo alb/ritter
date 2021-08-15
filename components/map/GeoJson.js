@@ -6,9 +6,13 @@ import styles from '../../styles/CustomMarker.module.css';
 import colors from  './utils/colors';
 
 export default function GeoJson(props) {
+    let iterableLayers = props.data.filter(layer => {
+        return !layer.properties.hidden;
+    })
+
     return (
         <FeatureGroup>
-            { props.data.map((layer, index) => (
+            { iterableLayers.map((layer, index) => (
                 <GeoJSON data={layer} index={index} key={index}/>
             ))}
         </FeatureGroup>
@@ -60,7 +64,6 @@ let processFeature = (feature, index) => {
     }
 
     if(feature.geometry.type === "Polygon") {
-        console.log(coordinates)
         return (
             <Polygon pathOptions={pathOptions} positions={coordinates} key={index}/>
         )
