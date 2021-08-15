@@ -1,70 +1,70 @@
 .sidebar {
-    position: absolute;
-    z-index: 9999;
-    margin: 1.5em;
-    width: 20vw;
-    height: 40vh;
-    border-radius: 5px;
-    padding: 1.5em;
-    background: rgb(45, 45, 45);
-    border: 1px solid rgb(65, 65, 65);
-    box-shadow: 3px 4px 20px 10px rgba(25, 25, 25, 0.3);
+  position: absolute;
+  z-index: 9999;
+  margin: 1.5em;
+  width: 20vw;
+  height: 40vh;
+  border-radius: 5px;
+  padding: 1.5em;
+  background: rgb(45, 45, 45);
+  border: 1px solid rgb(65, 65, 65);
+  box-shadow: 3px 4px 20px 10px rgba(25, 25, 25, 0.3);
 }
 
 .opener {
-    position: absolute;
-    margin: 1em;
-    z-index: 9999;
-    padding: 0.5em;
-    background: rgb(45, 45, 45);
-    border: 1px solid rgb(65, 65, 65);
-    box-shadow: 3px 4px 20px 10px rgba(25, 25, 25, 0.3);
-    width: 25px;
-    height: 25px;
-    box-sizing: content-box;
+  position: absolute;
+  margin: 1em;
+  z-index: 9999;
+  padding: 0.5em;
+  background: rgb(45, 45, 45);
+  border: 1px solid rgb(65, 65, 65);
+  box-shadow: 3px 4px 20px 10px rgba(25, 25, 25, 0.3);
+  width: 25px;
+  height: 25px;
+  box-sizing: content-box;
 }
 
 .titleSection {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .title {
-    font-size: 1.75em;
-    font-weight: 900;
-    display: flex;
-    align-items: center;
+  font-size: 1.75em;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
 }
 
 .title span {
-    margin-left: 0.25em;
+  margin-left: 0.25em;
 }
 
 .layers {
-    margin-top: 1em;
+  margin-top: 1em;
 }
 
 .layer:not(:last-child) {
-    margin-bottom: 0.25em;
+  margin-bottom: 0.25em;
 }
 
 .layer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 1.05em;
-    padding: 1em;
-    border-radius: 5px;
-    width: 100%;
-    transition: 0.2s ease-in;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.05em;
+  padding: 1em;
+  border-radius: 5px;
+  width: 100%;
+  transition: 0.2s ease-in;
 }
 
 .layer:hover {
-    background: rgb(35, 35, 35);
+  background: rgb(35, 35, 35);
 }
 
 .layerToggle img {
-    width: 1.15em;
-    height: 1.15em;
+  width: 1.15em;
+  height: 1.15em;
 }

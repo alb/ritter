@@ -1,7 +1,7 @@
 .marker {
-    width: 15px;
-    height: 15px;
-    background: rgb(0, 119, 255);
-    border-radius: 50%;
-    border: 2px solid white;
+  width: 15px;
+  height: 15px;
+  background: rgb(0, 119, 255);
+  border-radius: 50%;
+  border: 2px solid white;
 }
