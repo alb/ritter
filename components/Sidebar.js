@@ -23,7 +23,6 @@ export default function Sidebar() {
           rotateX: -15,
           transition: {
             duration: 0.5,
-            delay: 0.3
           },
           transitionEnd: {
             display: "none"
