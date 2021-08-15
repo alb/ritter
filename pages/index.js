@@ -1,8 +1,13 @@
+import { useSelector, useDispatch } from 'react-redux';
+import { setGeoJson } from '../store/features/geoSlice';
 import Map from '../components/map/Map';
 import Sidebar from '../components/Sidebar';
 import styles from '../styles/Index.module.css'
 
 export default function Index() {
+  const dispatch = useDispatch();
+  // dispatch(setGeoJson([3, 4]));
+
   let testGeoJson = [
     {
       "type": "FeatureCollection",
@@ -154,10 +159,17 @@ export default function Index() {
     }
   ];
   
+  dispatch(setGeoJson(testGeoJson));
+
+  setTimeout(() => {
+    console.warn("State Change");
+    dispatch(setGeoJson([testGeoJson[0]]))
+  }, 5000)
+  
   return (
     <div className={styles.map}>
-    <Sidebar/>
-    <Map data={testGeoJson}/>
+      <Sidebar/>
+      <Map/>
     </div>
     )
   };

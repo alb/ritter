@@ -9,8 +9,8 @@ const LoadedMap = dynamic(import('./LeafletMap'), {
   )
 })
 
-const Map = (props) => (
-    <LoadedMap data={props.data}/>
+const Map = () => (
+    <LoadedMap/>
 )
 
 export default Map

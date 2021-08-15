@@ -1,11 +1,24 @@
-import { useState, useEffect } from 'react';
+import { FeatureGroup } from "react-leaflet"
 import { LayerGroup, Circle, Marker, Polygon, Polyline } from 'react-leaflet';
 import { divIcon } from 'leaflet';
-import { convertCoords } from './coordinates';
-import styles from '../../../styles/CustomMarker.module.css';
-import colors from  './colors';
+import { convertCoords } from './utils/coordinates';
+import styles from '../../styles/CustomMarker.module.css';
+import colors from  './utils/colors';
 
-export function GeoJSON(data, key) {
+export default function GeoJson(props) {
+    return (
+        <FeatureGroup>
+            { props.data.map((layer, index) => (
+                <GeoJSON data={layer} index={index} key={index}/>
+            ))}
+        </FeatureGroup>
+    )
+}
+
+function GeoJSON(props) {
+    let key = props.index;
+    let data = props.data;
+
     return (
         <LayerGroup key={key}>
             {data.features.map((feature, index) => {  
@@ -17,12 +30,7 @@ export function GeoJSON(data, key) {
 
 let processFeature = (feature, index) => {
     let pathOptions = {};
-
-    const [coordinates, setCoordinates] = useState([]);
-
-    useEffect(() => {
-        setCoordinates(convertCoords(feature.geometry.coordinates));
-    }, [])
+    let coordinates = convertCoords(feature.geometry.coordinates);
 
     if(feature.properties?.color) {
         let color = feature.properties.color;
@@ -59,7 +67,7 @@ let processFeature = (feature, index) => {
 
     if(feature.geometry.type === "LineString") {
         return (
-            <Polyline pathOptions={pathOptions} positions={coordinates} />
+            <Polyline pathOptions={pathOptions} positions={coordinates} key={index}/>
         )
     }
 }

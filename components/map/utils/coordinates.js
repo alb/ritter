@@ -1,5 +1,5 @@
 export function convertCoords(coordinates) {
-    coordinates = coordinates.reverse();
+    coordinates = coordinates.slice().reverse();
 
     coordinates.map(item =>{
         if(Array.isArray(item)) {
