@@ -48,3 +48,23 @@
 .layer:not(:last-child) {
     margin-bottom: 0.25em;
 }
+
+.layer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.05em;
+    padding: 1em;
+    border-radius: 5px;
+    width: 100%;
+    transition: 0.2s ease-in;
+}
+
+.layer:hover {
+    background: rgb(35, 35, 35);
+}
+
+.layerToggle img {
+    width: 1.15em;
+    height: 1.15em;
+}

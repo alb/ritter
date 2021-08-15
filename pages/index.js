@@ -6,13 +6,12 @@ import styles from '../styles/Index.module.css'
 
 export default function Index() {
   const dispatch = useDispatch();
-  // dispatch(setGeoJson([3, 4]));
 
   let testGeoJson = [
     {
       "type": "FeatureCollection",
       "properties": {
-        "name": "Test"
+        "name": "Polygon and Radius"
       },
       "features": [
         {
@@ -123,7 +122,7 @@ export default function Index() {
     {
       "type": "FeatureCollection",
       "properties": {
-        "name": "Test"
+        "name": "Line and Point"
       },
       "features": [
         {
@@ -161,10 +160,10 @@ export default function Index() {
   
   dispatch(setGeoJson(testGeoJson));
 
-  setTimeout(() => {
-    console.warn("State Change");
-    dispatch(setGeoJson([testGeoJson[0]]))
-  }, 5000)
+  // setTimeout(() => {
+  //   console.warn("State Change");
+  //   dispatch(setGeoJson([testGeoJson[0]]))
+  // }, 5000)
   
   return (
     <div className={styles.map}>

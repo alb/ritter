@@ -60,6 +60,7 @@ let processFeature = (feature, index) => {
     }
 
     if(feature.geometry.type === "Polygon") {
+        console.log(coordinates)
         return (
             <Polygon pathOptions={pathOptions} positions={coordinates} key={index}/>
         )

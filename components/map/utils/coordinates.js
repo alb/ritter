@@ -1,10 +1,27 @@
 export function convertCoords(coordinates) {
-    coordinates = coordinates.slice().reverse();
+    return(reverse(copy(coordinates)));
+}
 
-    coordinates.map(item =>{
+function reverse(array) {
+    array = array.reverse();
+
+    array.map(item =>{
         if(Array.isArray(item)) {
-            return convertCoords(item);
+            return reverse(item);
         }
     })
-    return coordinates;
+    return array;
+}
+
+function copy(array){
+    let newArray = [];
+
+    array.forEach(value => {
+        if(Array.isArray(value)){
+            newArray.push(copy(value));
+        } else {
+            newArray.push(value);
+        }
+    });
+    return newArray;
 }

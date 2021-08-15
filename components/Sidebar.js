@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import styles from '../styles/Sidebar.module.css';
 
 export default function Sidebar() {
+    const geoJson = useSelector(state => state.geoReducer.geoJson);
     const [isActive, toggleActive] = useState(true);
 
     const toggleSidebar = () => {
@@ -68,15 +70,16 @@ export default function Sidebar() {
                     <img src="/x.svg" onClick={toggleSidebar}/>
                 </div>
                 <div className={styles.layers}>
-                    <div className={styles.layer}>
-                        Layer 1
+                  {geoJson.map((layer, index) => (
+                    <div className={styles.layer} key={index}>
+                      <div class={styles.layerName}>
+                        <span>{layer.properties.name}</span>
+                      </div>
+                      <div class={styles.layerToggle}>
+                        <img src="/eye.svg"/>
+                      </div>
                     </div>
-                    <div className={styles.layer}>
-                        Layer 2
-                    </div>
-                    <div className={styles.layer}>
-                        Layer 3 
-                    </div>
+                  ))}
                 </div>
             </motion.div>
             <motion.div
