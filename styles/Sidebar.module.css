@@ -68,3 +68,24 @@
   width: 1.15em;
   height: 1.15em;
 }
+
+
+@media (min-width: 320px ) and (max-width: 641px)  { 
+  .sidebar {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 961px)  {
+  .sidebar {
+    width: 50vw;
+  }
+}
+
+@media (min-width: 961px) and (max-width: 1370px)  { 
+  .sidebar {
+    width: 35vw;
+    height: 50vh;
+  }
+}
