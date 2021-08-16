@@ -11,6 +11,7 @@
 
 ### Features 
  - Easy to use and extend
+ - Fully responsive
  - Custom dark map theme
  - Layer-based viewing with the ability to toggle layers
  - Able to render all geometry types specified in the [GeoJSON Specification](https://geojson.org/) 
